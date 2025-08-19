@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Close menu
             menu.classList.remove('is-open');
             overlay.classList.remove('is-open');
+            menuToggle.classList.remove('is-open');
             menuIcon.src = './assets/images/icon-menu.svg';
             menuIcon.alt = 'Open menu';
             document.body.style.overflow = '';
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Open menu
             menu.classList.add('is-open');
             overlay.classList.add('is-open');
+            menuToggle.classList.add('is-open');
             menuIcon.src = './assets/images/icon-menu-close.svg';
             menuIcon.alt = 'Close menu';
             document.body.style.overflow = 'hidden';
@@ -43,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth >= 1024 && menu.classList.contains('is-open')) {
             menu.classList.remove('is-open');
             overlay.classList.remove('is-open');
+            menuToggle.classList.remove('is-open');
             menuIcon.src = './assets/images/icon-menu.svg';
             menuIcon.alt = 'Open menu';
             document.body.style.overflow = '';
