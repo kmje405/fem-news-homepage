@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | News homepage</title>
+  </head>
+  <body>
+    <div class="debug"></div>
+    <header>
+      <nav class="nav">
+        <img
+          src="./assets/images/logo.svg"
+          alt="News Homepage"
+          class="nav__logo"
+        />
+
+        <button class="nav__menu-toggle" aria-label="Toggle menu">
+          <img
+            src="./assets/images/icon-menu.svg"
+            alt="Open menu"
+            class="nav__menu-icon"
+          />
+        </button>
+
+        <div class="nav__overlay"></div>
+
+        <div class="nav__menu">
+          <ul class="nav__menu-list">
+            <li class="nav__menu-item">
+              <a href="#" class="nav__menu-link">Home</a>
+            </li>
+            <li class="nav__menu-item">
+              <a href="#" class="nav__menu-link">New</a>
+            </li>
+            <li class="nav__menu-item">
+              <a href="#" class="nav__menu-link">Popular</a>
+            </li>
+            <li class="nav__menu-item">
+              <a href="#" class="nav__menu-link">Trending</a>
+            </li>
+            <li class="nav__menu-item">
+              <a href="#" class="nav__menu-link">Categories</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="homepage__wrapper">
+      <div class="flex__container">
+        <section class="homepage__articles--spotlight">
+          <picture>
+            <source
+              media="(min-width: 30em)"
+              srcset="/assets/images/image-web-3-desktop.jpg"
+            />
+            <img
+              class="spotlight__image"
+              src="/assets/images/image-web-3-mobile.jpg"
+              alt="Web 3.0 illustration"
+            />
+          </picture>
+          <section class="spotlight__content">
+            <h1 class="spotlight__heading">The bright Future of Web 3.0?</h1>
+
+            <div class="spotlight__description-wrapper">
+              <p class="spotlight__description">
+                We dive into the next evolution of the web that claims to put
+                the power of the platforms back into the hands of the people.
+                But is it really fulfilling its promise?
+              </p>
+              <button>Read More</button>
+            </div>
+          </section>
+        </section>
+        <section class="homepage__articles__container">
+          <h2>New</h2>
+          <div class="homepage__articles">
+            <h3 class="homepage__article">Hydrogen VS Electric Cars</h3>
+            <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+          </div>
+        </section>
+      </div>
+      <section class="homepage__articles--ranked"></section>
+    </main>
+    <script src="index.js"></script>
+    <script src="debug.js"></script>
+  </body>
+</html>
