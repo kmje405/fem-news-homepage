@@ -9,6 +9,25 @@
   font-display: swap;
 }
 
+:root {
+  /* ==========================================================================
+   DESIGN SYSTEM TOKENS
+   ========================================================================== */
+
+  --c-white: hsl(0 100% 100%);
+  --c-black: hsl(0 0% 0%);
+
+  --c-grey-300: hsl(233 8% 79%);
+  --c-grey-200: hsl(0 0% 85%);
+
+  --c-navy-950: hsl(240 100% 5%);
+  --c-navy-600: hsl(236 13% 42%);
+
+  --c-gold-400: hsl(35 77% 62%);
+
+  --c-red-500: hsl(4 85% 63%);
+}
+
 body {
   font-family: "Inter";
 }
@@ -21,6 +40,7 @@ h1 {
 p {
   font-weight: 400;
   line-height: calc(26 / 16 * 1rem);
+  color: var(--c-navy-600);
 }
 
 img {
@@ -66,12 +86,10 @@ img {
    ========================================================================== */
 
 .homepage__articles--spotlight {
-  border: 1px solid red;
   overflow: hidden;
 }
 
-.homepage__articles__container {
-  border: 2px solid turquoise;
+.homepage__articles--new {
   max-width: calc(350 / 16 * 1rem);
 }
 
@@ -136,7 +154,7 @@ img {
   text-decoration: none;
   font-size: 1.125rem;
   font-weight: 400;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav__menu-link:hover {
@@ -161,6 +179,73 @@ img {
   visibility: visible;
 }
 
+.homepage__articles--new {
+  padding: 1rem;
+  background-color: var(--c-navy-950);
+  color: white;
+}
+.homepage__articles--new h2 {
+  color: var(--c-gold-400);
+  font-size: calc(32 / 16 * 1rem);
+  font-weight: bold;
+  padding-block: 1rem 2rem;
+}
+.homepage__articles--new h3 {
+  font-size: calc(20 / 16 * 1rem);
+  line-height: calc(24 / 16 * 1rem);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.homepage__articles--new h3:hover {
+  color: var(--c-gold-400);
+}
+.homepage__articles--new p {
+  font-size: calc(15 / 16 * 1rem);
+  line-height: calc(26 / 16 * 1rem);
+  color: var(--c-grey-300);
+}
+.homepage__article {
+  border-bottom: 1px solid var(--c-navy-600);
+  padding: 2rem 0;
+}
+
+.homepage__article:first-of-type {
+  padding-top: 0;
+}
+
+.homepage__article:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* ==========================================================================
+   BUTTON STYLES
+   ========================================================================== */
+
+button {
+  background-color: var(--c-red-500);
+  color: var(--c-white);
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-wrap: nowrap;
+}
+
+button:hover {
+  background-color: var(--c-navy-950);
+}
+
+button:focus {
+  outline: 2px solid var(--c-gold-400);
+  outline-offset: 2px;
+}
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS - Mobile First
    ========================================================================== */
@@ -174,6 +259,8 @@ img {
 
   .nav {
     padding-inline: 1.25rem;
+    max-width: 21.4375rem; /* 343px mobile */
+    margin: 0 auto;
   }
 }
 
@@ -186,12 +273,14 @@ img {
 
   .nav {
     padding-inline: 2rem;
+    max-width: calc(608 / 16 * 1rem); /* 608px */
+    margin: 0 auto;
   }
 
   .spotlight__content {
     gap: 1.5rem;
   }
-  .homepage__articles__container {
+  .homepage__articles--new {
     max-width: calc(608 / 16 * 1rem);
   }
 }
@@ -205,23 +294,8 @@ img {
 
   .nav {
     padding-inline: 1rem;
-  }
-
-  .flex__container {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-  }
-
-  .homepage__articles--spotlight {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .homepage__articles--new {
-    flex: 1;
+    max-width: 38rem; /* 608px tablet */
+    margin: 0 auto;
   }
 
   .spotlight__image {
@@ -325,8 +399,13 @@ img {
     max-height: 300px;
     object-fit: cover;
   }
-  .spotlight__description button {
-    display: block;
+  .spotlight__description-wrapper button {
+    width: calc(185 / 16 * 1rem);
+    height: calc(48 / 16 * 1rem);
+  }
+
+  .spotlight__description-wrapper button:hover {
+    background-color: var(--c-navy-950);
   }
 
   .homepage__articles--new {
@@ -341,6 +420,7 @@ img {
 
   h1 {
     font-size: calc(56 / 16 * 1rem);
+    line-height: calc(56 / 16 * 1rem);
   }
 
   .spotlight__content {
